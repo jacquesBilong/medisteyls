@@ -2,231 +2,246 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cabinet Médical Medi-Steyls</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/0f2cecdcb7.js" crossorigin="anonymous"></script>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
+      margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to bottom, #002f5f, #00bcd4);
+      background: linear-gradient(to bottom, #002f5f, #0077a3);
       color: white;
-      scroll-behavior: smooth;
     }
-    header {
-      background: #002f5f;
-      padding: 1rem 2rem;
+
+    .top-bar {
+      background: #00325f;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 0.5rem 2rem;
+      font-size: 0.9rem;
+      flex-wrap: wrap;
+    }
+    .top-bar a {
       color: white;
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+    .top-bar i {
+      margin-right: 0.3rem;
+    }
+
+    .sidebar {
       position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 999;
-    }
-    .contact-info i {
-      margin-right: 0.5rem;
-    }
-    .social-icons a {
-      color: white;
-      margin-left: 1rem;
-      font-size: 1.1rem;
-    }
-    nav.sidebar {
-      position: fixed;
-      top: 60px;
+      top: 50px;
       left: 0;
-      width: 220px;
-      height: calc(100% - 60px);
-      background: #003865;
-      color: white;
-      padding: 2rem 1rem;
-      text-align: center;
+      width: 230px;
+      height: calc(100% - 50px);
+      background: #003d6b;
+      padding: 1.5rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
-    nav.sidebar img {
-      width: 100px;
+
+    .sidebar img {
+      width: 120px;
       margin-bottom: 1rem;
     }
-    nav.sidebar h2 {
+
+    .sidebar h2 {
       font-size: 1.4rem;
       margin-bottom: 2rem;
     }
-    nav.sidebar ul {
-      list-style: none;
-      padding: 0;
-    }
-    nav.sidebar li {
-      margin: 1rem 0;
-    }
-    nav.sidebar a {
+
+    .sidebar a {
       color: white;
       text-decoration: none;
+      margin: 0.7rem 0;
+      display: block;
       font-weight: 500;
     }
+
     .btn-rdv {
       background: #00e0ff;
-      padding: 0.5rem 1rem;
       color: #002f5f;
-      font-weight: bold;
-      display: inline-block;
-      margin-top: 2rem;
+      padding: 0.5rem 1.2rem;
       border-radius: 5px;
+      font-weight: bold;
+      margin-top: 2rem;
     }
+
     main {
-      margin-left: 240px;
-      padding: 6rem 2rem 2rem;
+      margin-left: 250px;
+      padding: 2rem;
     }
-    .swiper {
-      width: 100%;
-      height: 500px;
-      position: relative;
-    }
-    .swiper-slide {
-      position: relative;
-    }
-    .swiper-slide img {
-      width: 100%;
-      height: 500px;
-      object-fit: cover;
-    }
-    .slide-content {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: white;
+
+    section {
+      margin-bottom: 4rem;
       text-align: center;
-      background: rgba(0, 0, 0, 0.4);
-      padding: 1.5rem 2rem;
-      border-radius: 10px;
-      animation: fadein 1.2s ease-in-out;
     }
-    .slide-content h1 {
+
+    h2 {
       font-size: 2rem;
       margin-bottom: 1rem;
     }
-    .slide-content p {
-      font-size: 1rem;
-      margin-bottom: 1rem;
+
+    .swiper {
+      width: 100%;
+      max-width: 1000px;
+      margin: auto;
     }
-    .slide-content .btn-rdv {
+
+    .swiper-slide img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .slide-caption {
+      position: absolute;
+      bottom: 20%;
+      left: 10%;
+      color: white;
+      background: rgba(0,0,0,0.5);
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      text-align: left;
+    }
+
+    .slide-caption h1 {
+      margin: 0;
+      font-size: 2.2rem;
+    }
+
+    .slide-caption p {
+      margin-top: 0.5rem;
+    }
+
+    .slide-caption a {
+      margin-top: 1rem;
+      display: inline-block;
+      padding: 0.5rem 1rem;
       background: #00e0ff;
       color: #002f5f;
       font-weight: bold;
-      padding: 0.6rem 1.4rem;
       border-radius: 5px;
       text-decoration: none;
     }
-    section {
-      margin: 4rem auto;
-      max-width: 1000px;
-      text-align: center;
-    }
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 2rem;
-    }
-    .grid {
+
+    .card-grid {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
+      flex-wrap: wrap;
       gap: 2rem;
     }
+
     .card {
       background: white;
       color: #002f5f;
-      width: 240px;
+      width: 250px;
       border-radius: 10px;
       overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
+
     .card img {
       width: 100%;
       height: 160px;
       object-fit: cover;
     }
+
     .card h3 {
-      padding: 1rem;
-      font-size: 1.1rem;
-    }
-    footer {
-      background: #002f5f;
-      padding: 2rem 1rem;
-      color: white;
-      text-align: center;
+      margin: 1rem 0 0.5rem;
     }
 
-    @keyframes fadein {
-      from { opacity: 0; transform: translate(-50%, -60%); }
-      to { opacity: 1; transform: translate(-50%, -50%); }
+    .card p {
+      font-size: 0.9rem;
+      margin: 0 1rem 1rem;
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      border-radius: 10px;
+      margin-top: 1rem;
+    }
+
+    footer {
+      background: #001e3c;
+      color: white;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 0.9rem;
     }
 
     @media (max-width: 768px) {
-      nav.sidebar { display: none; }
-      main { margin-left: 0; padding-top: 7rem; }
-      header { flex-direction: column; align-items: flex-start; }
-      .slide-content h1 { font-size: 1.3rem; }
+      .sidebar {
+        display: none;
+      }
+
+      main {
+        margin-left: 0;
+      }
+
+      .top-bar {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .swiper-slide img {
+        height: 220px;
+      }
+
+      .slide-caption h1 {
+        font-size: 1.4rem;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Barre supérieure -->
-  <header>
-    <div class="contact-info">
-      <i class="fas fa-clock"></i> Lun-Ven : 7h à 18h |
-      <i class="fas fa-envelope"></i> contact@medi-steyls.com |
-      <i class="fas fa-phone"></i> 0032 2 203 40 35
+  <div class="top-bar">
+    <div><i class="fas fa-clock"></i> Nous sommes ouverts : Lun–Ven, 7h à 18h</div>
+    <div>
+      <a href="https://maps.google.com?q=Rue+de+l'Émancipation+15,+Bruxelles" target="_blank"><i class="fas fa-map-marker-alt"></i> Rue de l'Émancipation 15, Bruxelles</a>
+      <a href="mailto:contact@medi-steyls.com"><i class="fas fa-envelope"></i> contact@medi-steyls.com</a>
+      <a href="tel:+3222034035"><i class="fas fa-phone"></i> 0032 2 203 40 35</a>
     </div>
-    <div class="social-icons">
-      <a href="#"><i class="fab fa-facebook"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-    </div>
-  </header>
+  </div>
 
-  <!-- Sidebar -->
-  <nav class="sidebar">
-    <img src="logo.png" alt="Logo Medi-Steyls" />
-    <h2>Medi–Steyls</h2>
-    <ul>
-      <li><a href="#home">Accueil</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#team">Équipe</a></li>
-      <li><a href="#gallery">Galerie</a></li>
-      <li><a href="#infos">Infos</a></li>
-      <li><a href="https://rosa.be/fr/" target="_blank" class="btn-rdv">Prendre RDV</a></li>
-    </ul>
-  </nav>
+  <aside class="sidebar">
+    <img src="imageS/logo3.jpg" alt="Logo" />
+    <h2>MEDI–STEYLS</h2>
+    <a href="#services"><i class="fas fa-stethoscope"></i> Services</a>
+    <a href="#equipe"><i class="fas fa-user-md"></i> Équipe</a>
+    <a href="#galerie"><i class="fas fa-images"></i> Galerie</a>
+    <a href="#infos"><i class="fas fa-info-circle"></i> Informations</a>
+    <a href="https://rosa.be/fr/" class="btn-rdv" target="_blank"><i class="fas fa-calendar-check"></i> Prendre RDV</a>
+  </aside>
 
-  <!-- Contenu principal -->
   <main>
-    <section id="home">
+    <section id="accueil">
       <div class="swiper mySwiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <img src="cabinet1.jpg" />
-            <div class="slide-content">
-              <h1>Bienvenue chez Medi-Steyls</h1>
-              <p>Un cabinet de proximité, humain, moderne et accessible à Bruxelles.</p>
-              <a class="btn-rdv" href="https://rosa.be/fr/" target="_blank">Réserver maintenant</a>
+            <img src="images/cabinet1.jpg" />
+            <div class="slide-caption">
+              <h1>Cabinet Moderne</h1>
+              <p>Un environnement chaleureux et professionnel à Bruxelles.</p>
+              <a href="#services">Découvrir nos services</a>
             </div>
           </div>
           <div class="swiper-slide">
-            <img src="cabinet2.jpg" />
-            <div class="slide-content">
-              <h1>Des spécialistes à votre écoute</h1>
-              <p>Notre équipe vous accompagne avec professionnalisme et bienveillance.</p>
-              <a class="btn-rdv" href="https://rosa.be/fr/" target="_blank">Prendre RDV</a>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <img src="images/cabinet3.jpg" />
-            <div class="slide-content">
-              <h1>Consultations & Examens</h1>
-              <p>Généraux, médicaux, prises de sang et services adaptés à tous.</p>
-              <a class="btn-rdv" href="https://rosa.be/fr/" target="_blank">Réservez votre visite</a>
+            <img src="images/cabinet2.jpg" />
+            <div class="slide-caption">
+              <h1>Équipe Médicale</h1>
+              <p>Des spécialistes compétents à votre écoute.</p>
+              <a href="#equipe">Voir l'équipe</a>
             </div>
           </div>
         </div>
@@ -234,55 +249,84 @@
     </section>
 
     <section id="services">
-      <h2>Nos Services</h2>
-      <div class="grid">
-        <div class="card"><img src="images/cabinet1.jpg"><h3>Consultations Générales</h3></div>
-        <div class="card"><img src="images/cabinet2.jpg"><h3>Examens Médicaux</h3></div>
-        <div class="card"><img src="images/cabinet3.jpg"><h3>Prises de Sang</h3></div>
-        <div class="card"><img src="images/cabinet1.jpg"><h3>Spécialistes</h3></div>
+      <h2>Nos services</h2>
+      <div class="card-grid">
+        <div class="card">
+          <img src="images/cabinet1.jpg" />
+          <h3>Consultations</h3>
+          <p>Générales et spécialisées, selon vos besoins.</p>
+        </div>
+        <div class="card">
+          <img src="images/cabinet2.jpg" />
+          <h3>Examens Médicaux</h3>
+          <p>Prises de sang, tests diagnostiques, etc.</p>
+        </div>
       </div>
     </section>
 
-    <section id="team">
+    <section id="equipe">
       <h2>Notre Équipe</h2>
-      <div class="grid">
-        <div class="card"><img src="images/ndzana.jpeg"><h3>Dr Théodore NDZANA<br><small>Médecin Généraliste</small></h3></div>
-        <div class="card"><img src="images/doctor1.jpg"><h3>Dr Papi<br><small>Cardiologue</small></h3></div>
-        <div class="card"><img src="images/doctor2.jpg"><h3>Dr Mami<br><small>Dermatologue</small></h3></div>
+      <div class="card-grid">
+        <div class="card">
+          <img src="images/ndzana.jpeg" />
+          <h3>Dr NDZANA</h3>
+          <p>Médecin Généraliste</p>
+        </div>
+        <div class="card">
+          <img src="images/doctor1.jpg" />
+          <h3>Dr Papi</h3>
+          <p>Cardiologue</p>
+        </div>
+        <div class="card">
+          <img src="images/doctor2.jpg" />
+          <h3>Dr Mami</h3>
+          <p>Dermatologue</p>
+        </div>
       </div>
     </section>
 
-    <section id="gallery">
-      <h2>Galerie Photos</h2>
-      <div class="grid">
-        <img src="images/cabinet1.jpg" style="width: 300px; border-radius: 10px;">
-        <img src="images/cabinet2.jpg" style="width: 300px; border-radius: 10px;">
-        <img src="images/cabinet3.jpg" style="width: 300px; border-radius: 10px;">
+    <section id="galerie">
+      <h2>Galerie</h2>
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="images/cabinet1.jpg" /></div>
+          <div class="swiper-slide"><img src="images/cabinet2.jpg" /></div>
+          <div class="swiper-slide"><img src="images/cabinet3.jpg" /></div>
+        </div>
       </div>
     </section>
 
     <section id="infos">
-      <h2>Informations</h2>
-      <p><strong>Horaires :</strong> Lundi à Vendredi – 08h30 à 18h30 / Samedi – 09h00 à 13h00 / Dimanche – Fermé</p>
-      <p><strong>Accès :</strong> Bus 47, Tram 3 (Arrêt Heembeek) / Parking gratuit / Accès PMR</p>
-      <iframe src="https://www.google.com/maps?q=Rue+de+l'Émancipation+15,+Bruxelles&output=embed" width="100%" height="300" style="border-radius: 10px; margin-top:1rem;"></iframe>
+      <h2>Accessibilité & Infos</h2>
+      <div class="card-grid">
+        <div class="card">
+          <h3>Horaires</h3>
+          <p>Lun - Ven : 08h30 - 18h30<br>Sam : 09h - 13h<br>Dim : Fermé</p>
+        </div>
+        <div class="card">
+          <h3>Accès</h3>
+          <p>Tram 3, Bus 47, Arrêt “Heembeek”<br>Parking gratuit<br>Accès PMR</p>
+        </div>
+      </div>
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps?q=Rue+de+l'Émancipation+15,+Bruxelles&output=embed" allowfullscreen></iframe>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Medi-Steyls | Rue de l'Émancipation 15, Bruxelles | 0032 2 203 40 35</p>
+    <p>&copy; 2025 Medi-Steyls – Tous droits réservés</p>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="https://kit.fontawesome.com/0f2cecdcb7.js" crossorigin="anonymous"></script>
   <script>
     const swiper = new Swiper(".mySwiper", {
       loop: true,
       autoplay: {
-        delay: 5000,
+        delay: 4000,
         disableOnInteraction: false
       },
-      speed: 1000
+      speed: 1500
     });
   </script>
 </body>
