@@ -1,167 +1,401 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cabinet Médical Medi-Steyls</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
-  <script src="https://kit.fontawesome.com/0f2cecdcb7.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Cabinet Médical Medi-Steyls
+  </title>
+  <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&amp;family=Playfair+Display:wght@700&amp;display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  </script>
+  <link href="style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header class="mobile-header">
+   <div class="brand-logo">
+    <img alt="Medi-Steyls Logo" src="images/logo3.jpg"/>
+   </div>
+   <div class="menu-toggle">
+    <i class="fas fa-bars">
+    </i>
+   </div>
+   <nav class="mobile-nav">
+    <a class="nav-link" href="#accueil">
+     Accueil
+    </a>
+    <a class="nav-link" href="#services">
+     Services
+    </a>
+    <a class="nav-link" href="#equipe">
+     Équipe
+    </a>
+    <a class="nav-link" href="#galerie">
+     Galerie
+    </a>
+    <a class="nav-link" href="#infos">
+     Infos
+    </a>
+    <a class="nav-link" href="#contact">
+     Contact
+    </a>
+    <a href="https://rosa.be/fr/booking/hp/theodore-ndzana/is-new-patient/?site=62441124b1eb746cfe26d82e" target="_blank">
+     Prendre RDV
+    </a>
+    <div class="mobile-infos">
+     <p>
+      <i class="fas fa-map-marker-alt">
+      </i>
+      Rue de l'Émancipation 15, Bruxelles
+     </p>
+     <p>
+      <i class="fas fa-clock">
+      </i>
+      Nous sommes ouvert le Lundi – Vendredi : 9h–18h
+     </p>
+     <p>
+      <i class="fas fa-phone">
+      </i>
+      <a href="tel:+3222034035">
+       0032 2 203 40 35
+      </a>
+     </p>
+     <p>
+      <i class="fas fa-envelope">
+      </i>
+      <a href="mailto:contact@medi-steyls.com">
+       contact@medi-steyls.com
+      </a>
+     </p>
+    </div>
+    <div class="mobile-socials">
+     <a href="https://www.facebook.com/medi.steyls" target="_blank">
+      <i class="fab fa-facebook-f">
+      </i>
+     </a>
+     <a href="https://wa.me/32475234567" target="_blank">
+      <i class="fab fa-whatsapp">
+      </i>
+     </a>
+     <a href="https://www.instagram.com/medi.steyls" target="_blank">
+      <i class="fab fa-instagram">
+      </i>
+     </a>
+     <a href="https://www.linkedin.com/company/medi-steyls" target="_blank">
+      <i class="fab fa-linkedin-in">
+      </i>
+     </a>
+    </div>
+   </nav>
+  </header>
+  
   <div class="top-bar">
-    <div><i class="fas fa-clock"></i> Lun–Ven, 9h à 18h (sur rendez-vous)</div>
-    <div>
-      <a href="https://maps.google.com?q=Rue+de+l'Émancipation+15,+Bruxelles" target="_blank"><i class="fas fa-map-marker-alt"></i> Rue de l'Émancipation 15, Bruxelles</a>
-      <a href="mailto:contact@medi-steyls.com"><i class="fas fa-envelope"></i> contact@medi-steyls.com</a>
-      <a href="tel:+3222034035"><i class="fas fa-phone"></i> 0032 2 203 40 35</a>
-    </div>
+   <div>
+    <i class="fas fa-clock">
+    </i>
+    Nous sommes ouvert le Lundi – Vendredi, 9h à 18h (sur rendez-vous)
+   </div>
+   <div>
+    <a href="https://maps.google.com?q=Rue+de+l'Émancipation+15,+Bruxelles" target="_blank">
+     <i class="fas fa-map-marker-alt">
+     </i>
+     Rue de l'Émancipation 15, Bruxelles
+    </a>
+    <a href="mailto:contact@medi-steyls.com">
+     <i class="fas fa-envelope">
+     </i>
+     contact@medi-steyls.com
+    </a>
+    <a href="tel:+3222034035">
+     <i class="fas fa-phone">
+     </i>
+     0032 2 203 40 35
+    </a>
+   </div>
   </div>
-
   <aside class="sidebar">
-    <img src="logo3.jpg" alt="Logo" />
-    <h2>MEDI–STEYLS</h2>
-    <a href="#accueil"><i class="fas fa-home"></i> Accueil</a>
-    <a href="#services"><i class="fas fa-stethoscope"></i> Services</a>
-    <a href="#equipe"><i class="fas fa-user-md"></i> Équipe</a>
-    <a href="#galerie"><i class="fas fa-images"></i> Galerie</a>
-    <a href="#infos"><i class="fas fa-info-circle"></i> Infos</a>
-    <a href="#temoignages"><i class="fas fa-comment"></i> Témoignages</a>
-    <a href="#contact"><i class="fas fa-envelope-open-text"></i> Contact</a>
-    <a href="https://rosa.be/fr/booking/hp/theodore-ndzana/is-new-patient/?site=62441124b1eb746cfe26d82e" class="btn-rdv" target="_blank"><i class="fas fa-calendar-check"></i> Prendre RDV</a>
+   <a class="nav-link" href="#accueil">
+    <img alt="Logo" src="images/logo3.jpg"/>
+   </a>
+   <h2>
+    MEDI–STEYLS
+   </h2>
+   <a class="nav-link" href="#accueil">
+    <i class="fas fa-home">
+    </i>
+    Accueil
+   </a>
+   <a class="nav-link" href="#services">
+    <i class="fas fa-stethoscope">
+    </i>
+    Services
+   </a>
+   <a class="nav-link" href="#equipe">
+    <i class="fas fa-user-md">
+    </i>
+    Équipe
+   </a>
+   <a class="nav-link" href="#galerie">
+    <i class="fas fa-images">
+    </i>
+    Galerie
+   </a>
+   <a class="nav-link" href="#infos">
+    <i class="fas fa-info-circle">
+    </i>
+    Infos
+   </a>
+   <a class="nav-link" href="#contact">
+    <i class="fas fa-envelope-open-text">
+    </i>
+    Contact
+   </a>
+   <a class="btn-rdv" href="https://rosa.be/fr/booking/hp/theodore-ndzana/is-new-patient/?site=62441124b1eb746cfe26d82e" target="_blank">
+    <i class="fas fa-calendar-check">
+    </i>
+    Prendre RDV
+   </a>
   </aside>
-
   <main>
-    <section id="accueil">
-      <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img src="cabinet1.jpg" />
-            <div class="slide-caption">
-              <h1>Cabinet Moderne</h1>
-              <p>Un environnement chaleureux et professionnel à Bruxelles.</p>
-              <a href="#services">Découvrir nos services</a>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <img src="cabinet2.jpg" />
-            <div class="slide-caption">
-              <h1>Équipe Médicale</h1>
-              <p>Des spécialistes compétents à votre écoute.</p>
-              <a href="#equipe">Voir l'équipe</a>
-            </div>
-          </div>
+  <div class="container">
+   
+<section id="accueil">
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="images/1.avif" alt="Salle d'attente moderne" loading="lazy" />
+        <div class="slide-caption">
+          <h1>Bienvenue chez Medi-Steyls</h1>
+          <p>Un cadre chaleureux et professionnel pour vous accueillir.</p>
+          <a class="nav-link" href="#services">Voir nos services</a>
         </div>
       </div>
-    </section>
-
-    <section id="services">
-      <h2>Nos services</h2>
-      <p>Consultations générales, spécialisées, examens médicaux et conseils personnalisés.</p>
-      <div class="card-grid">
-        <div class="card">
-          <img src="cabinet1.jpg" />
-          <h3>Consultations</h3>
-          <p>Médecine générale, suivi de santé, pédiatrie, gériatrie.</p>
-        </div>
-        <div class="card">
-          <img src="cabinet2.jpg" />
-          <h3>Examens</h3>
-          <p>Prises de sang, ECG, dépistages, bilans de santé complets.</p>
+      <div class="swiper-slide">
+        <img src="images/2.avif" alt="Accueil du cabinet médical" loading="lazy" />
+        <div class="slide-caption">
+          <h1>Consultations sur rendez-vous</h1>
+          <p>Une équipe disponible pour tous vos besoins de santé.</p>
+          <a class="nav-link" href="#equipe">Rencontrer l'équipe</a>
         </div>
       </div>
-    </section>
-
-    <section id="equipe">
-      <h2>Notre Équipe</h2>
-      <div class="card-grid">
-        <div class="card">
-          <a href="https://rosa.be/fr/hp/theodore-ndzana/" target="_blank">
-            <img src="ndzana.jpeg" />
-          </a>
-          <h3>Dr NDZANA</h3>
-          <p>Médecin Généraliste</p>
-        </div>
-        <div class="card">
-          <img src="doctor1.jpg" />
-          <h3>Dr Papi</h3>
-          <p>Cardiologue</p>
-        </div>
-        <div class="card">
-          <img src="doctor2.jpg" />
-          <h3>Dr Mami</h3>
-          <p>Dermatologue</p>
+      <div class="swiper-slide">
+        <img src="images/cabinet3.jpg" alt="Équipe médicale Medi-Steyls" loading="lazy" />
+        <div class="slide-caption">
+          <h1>Accès facile & rapide</h1>
+          <p>Nous sommes situés à Bruxelles – facilement accessible.</p>
+          <a class="nav-link" href="#infos">Infos pratiques</a>
         </div>
       </div>
-    </section>
-
-    <section id="galerie">
-      <h2>Galerie</h2>
-      <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide"><img src="cabinet1.jpg" /></div>
-          <div class="swiper-slide"><img src="cabinet2.jpg" /></div>
-          <div class="swiper-slide"><img src="cabinet3.jpg" /></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="infos">
-      <h2>Informations pratiques</h2>
-      <div class="card-grid">
-        <div class="card">
-          <h3>Horaires</h3>
-          <p>Lundi à Vendredi : 9h00 - 18h00<br>Samedi & Dimanche : Fermé</p>
-        </div>
-        <div class="card">
-          <h3>Accès</h3>
-          <p>Tram 3, Bus 47, <br> Arrêt Heembeek<br>Parking gratuit – Accès PMR</p>
-        </div>
-      </div>
-      <div class="map-container">
-        <iframe src="https://www.google.com/maps?q=Rue+de+l'Émancipation+15,+Bruxelles&output=embed" allowfullscreen></iframe>
-      </div>
-    </section>
-
-    <section id="temoignages">
-      <h2>Témoignages</h2>
-      <div class="card-grid">
-        <div class="card">
-          <p>“Un cabinet très professionnel, à l'écoute, et moderne. Je recommande à 100%.”</p>
-          <h3>– Fatima B.</h3>
-        </div>
-        <div class="card">
-          <p>“Merci au Dr NDZANA et à toute l'équipe pour leur accueil chaleureux.”</p>
-          <h3>– Michel R.</h3>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2>Contactez-nous</h2>
-      <form action="https://formsubmit.co/contact@medi-steyls.com" method="POST">
-        <input type="text" name="name" placeholder="Votre nom" required>
-        <input type="email" name="email" placeholder="Votre email" required>
-        <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
-        <button type="submit">Envoyer</button>
-      </form>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Medi-Steyls. Tous droits réservés.</p>
-    <div class="social-icons">
-      <a href="#"><i class="fab fa-facebook-f"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-linkedin-in"></i></a>
-      <a href="mailto:contact@medi-steyls.com"><i class="fas fa-envelope"></i></a>
     </div>
+    <div class="swiper-pagination"></div>
+
+
+
+
+    
+    
+  </div>
+</section>
+
+   <section class="a-propos" id="a-propos">
+    <h2>
+     Bienvenue chez Medi-Steyls
+    </h2>
+    <p>
+     Nous sommes un cabinet médical pluridisciplinaire situé à Bruxelles, engagé à offrir des soins accessibles,
+    personnalisés et de haute qualité à tous nos patients. Notre équipe de professionnels expérimentés vous accueille
+    dans un cadre chaleureux et moderne, avec une attention particulière portée à chaque consultation.
+    </p>
+   </section>
+   <section id="services">
+    <h2>
+     Nos services
+    </h2>
+    <p>
+     Consultations générales, spécialisées, examens médicaux et conseils personnalisés.
+    </p>
+    <div class="card-grid">
+     <div class="card">
+      <img src="images/cabinet1.jpg"/>
+      <h3>
+       Consultations
+      </h3>
+      <p>
+       Médecine générale, suivi de santé, pédiatrie, gériatrie.
+      </p>
+     </div>
+     <div class="card">
+      <img src="images/cabinet2.jpg"/>
+      <h3>
+       Examens
+      </h3>
+      <p>
+       Prises de sang, ECG, dépistages, bilans de santé complets.
+      </p>
+     </div>
+    </div>
+  <div class="swiper-pagination"></div>
+
+
+
+
+  
+</div>
+   </section>
+   <section id="equipe">
+    <h2>
+     Notre Équipe
+    </h2>
+    <div class="card-grid">
+     <div class="card">
+      <a href="https://rosa.be/fr/hp/theodore-ndzana/" target="_blank">
+       <img src="images/ndzana.jpeg"/>
+      </a>
+      <h3>
+       Dr NDZANA
+      </h3>
+      <p>
+       Médecin Généraliste
+      </p>
+     </div>
+     <div class="card">
+      <img src="images/doctor1.jpg"/>
+      <h3>
+       Dr Papi
+      </h3>
+      <p>
+       Cardiologue
+      </p>
+     </div>
+     <div class="card">
+      <img src="images/doctor2.jpg"/>
+      <h3>
+       Dr Mami
+      </h3>
+      <p>
+       Dermatologue
+      </p>
+     </div>
+    </div>
+  <div class="swiper-pagination"></div>
+
+
+
+
+  
+</div>
+   </section>
+   <section id="galerie">
+    <h2>
+     Galerie
+    </h2>
+    <div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+     <div class="swiper-wrapper">
+      <div class="swiper-slide">
+       <img src="images/cabinet1.jpg"/>
+      </div>
+      <div class="swiper-slide">
+       <img src="images/cabinet2.jpg"/>
+      </div>
+      <div class="swiper-slide">
+       <img src="images/cabinet3.jpg"/>
+      </div>
+     </div>
+    </div>
+  <div class="swiper-pagination"></div>
+
+
+
+
+  
+</div>
+   </section>
+   <section id="infos">
+    <h2>
+     Informations pratiques
+    </h2>
+    <div class="card-grid">
+     <div class="card">
+      <h3>
+       Horaires
+      </h3>
+      <p>
+       Lundi à Vendredi : 9h00 - 18h00
+       <br/>
+       Samedi &amp; Dimanche : Fermé
+      </p>
+     </div>
+     <div class="card">
+      <h3>
+       Accès
+      </h3>
+      <p>
+       Tram 3, Bus 47, Arrêt Heembeek
+       <br/>
+       Parking gratuit – Accès PMR
+      </p>
+     </div>
+    </div>
+    <div class="map-container">
+     <iframe allowfullscreen="" src="https://www.google.com/maps?q=Rue+de+l'Émancipation+15,+Bruxelles&amp;output=embed">
+     </iframe>
+    </div>
+  <div class="swiper-pagination"></div>
+
+
+
+
+  
+</div>
+   </section>
+    </div>
+</main>
+  <footer>
+   <p>
+    © 2025 Medi-Steyls. Tous droits réservés.
+   </p>
+   <p>
+    Cabinet médical pluridisciplinaire à Bruxelles. Consultations sur rendez-vous uniquement.
+   </p>
+   <div class="footer-infos">
+    <div class="social-icons">
+     <a aria-label="Facebook" href="https://www.facebook.com/medi.steyls" target="_blank">
+      <i class="fab fa-facebook-f">
+      </i>
+     </a>
+     <a aria-label="WhatsApp" href="https://wa.me/32475234567" target="_blank">
+      <i class="fab fa-whatsapp">
+      </i>
+     </a>
+     <a aria-label="Instagram" href="https://www.instagram.com/medi.steyls" target="_blank">
+      <i class="fab fa-instagram">
+      </i>
+     </a>
+     <a aria-label="LinkedIn" href="https://www.linkedin.com/company/medi-steyls" target="_blank">
+      <i class="fab fa-linkedin-in">
+      </i>
+     </a>
+     <a aria-label="Email" href="mailto:contact@medi-steyls.com" target="_blank">
+      <i class="fas fa-envelope">
+      </i>
+     </a>
+    </div>
+    <p class="footer-contact">
+     📍 Rue de l'Émancipation 15, Bruxelles
+     <br/>
+     📧 contact@medi-steyls.com    📞 0032 2 203 40 35
+    </p>
+   </div>
   </footer>
-
-  <a href="#top" class="scroll-top"><i class="fas fa-arrow-up"></i></a>
-
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="script.js"></script>
-</body>
+  <a class="scroll-top" href="#top">
+   <i class="fas fa-arrow-up">
+   </i>
+  </a>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js">
+  </script>
+  <script src="script.js">
+  </script>
+ </body>
 </html>
