@@ -1,7 +1,7 @@
 
 /* Header image avec overlay sombre */
 .header-image {
-  background: url('images/header.jpg') center/cover no-repeat;
+  background: url('1.avif') center/cover no-repeat;
   position: relative;
   color: white;
 }
