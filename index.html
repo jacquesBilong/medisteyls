@@ -1,180 +1,407 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Medi-Steyls | Cabinet Médical</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Centre Médical Medi-Steyls</title>
+<!-- Bootstrap & Font Awesome -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+<style>
+  body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+  }
+  /* Logo et navigation */
+  .logo-img {
+    width: 50px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+  nav .nav-link {
+    font-weight: 600; text-transform: uppercase; font-size: 1rem;
+  }
+  /* Header background */
+  .header-image {
+    background: url('1.avif') center/cover no-repeat;
+    height: 90vh;
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+    margin-bottom: 0;
+    color: #fff;
+    text-align: center;
+    padding: 0 20px;
+  }
+  .header-image .overlay {
+    position: absolute; inset: 0;
+    background: rgba(0,0,0,0.4);
+  }
+  .header-content {
+    position: relative; z-index: 2; text-align: center;
+  }
+  h1 {
+    font-size: 2.5rem; font-weight: bold; text-shadow: 2px 2px 4px #000;
+  }
+  /* Bouton RDV */
+  .btn-rdv {
+    margin-top: 15px;
+  }
+  /* Sections */
+  section {
+    padding: 60px 15px;
+  }
+  h2 {
+    margin-bottom: 30px;
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    position: relative;
+  }
+  /* Footer */
+  footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+  }
+  /* Images */
+  img {
+    max-width: 100%; height: auto;
+  }
+  /* Responsiveness spécifique */
+  @media(max-width: 768px){
+    h1 { font-size: 2rem; }
+  }
+</style>
 </head>
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
-        <img src="logo3.jpg" alt="Logo Medi-Steyls" height="60">
-        <span class="fw-bold text-primary">Medi-Steyls</span>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
-        <span class="navbar-toggler-icon"></span>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg bg-white fixed-top shadow-sm px-3">
+  <a class="d-flex align-items-center" href="#">
+    <img src="logo3.jpg" alt="Logo" class="logo-img me-2" />
+  </a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
+    <ul class="navbar-nav fw-semibold gap-3">
+      <li class="nav-item"><a class="nav-link" href="#accueil" data-i18n="menu_accueil"></a></li>
+      <li class="nav-item"><a class="nav-link" href="#services" data-i18n="menu_services"></a></li>
+      <li class="nav-item"><a class="nav-link" href="#equipe" data-i18n="menu_equipe"></a></li>
+      <li class="nav-item"><a class="nav-link" href="#galerie" data-i18n="menu_galerie"></a></li>
+      <li class="nav-item"><a class="nav-link" href="#contact" data-i18n="menu_contact"></a></li>
+    </ul>
+  </div>
+  <!-- Sélecteur langue -->
+  <div class="d-flex align-items-center ms-3">
+    <select class="form-select form-select-sm" onchange="switchLang(this.value)">
+      <option value="fr" selected>FR</option>
+      <option value="en">EN</option>
+      <option value="nl">NL</option>
+    </select>
+  </div>
+</nav>
+
+<!-- En-tête -->
+<header id="accueil" class="header-image">
+  <div class="overlay"></div>
+  <div class="header-content text-center">
+    <h1 data-i18n="titre"></h1>
+    <a href="https://rosa.be/fr/booking/hp/theodore-ndzana/is-new-patient/?site=62441124b1eb746cfe26d82e" target="_blank" class="btn btn-primary btn-rdv" data-i18n="cta"></a>
+  </div>
+</header>
+
+<!-- Section Welcome -->
+<section id="welcome">
+  <div class="container text-center" style="max-width: 800px;">
+    <h2 data-i18n="welcome_title"></h2>
+    <p data-i18n="description" class="lead"></p>
+    <p class="fw-semibold" data-i18n="we_pleased"></p>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="services" class="bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4 fw-bold" data-i18n="services_title"></h2>
+    <div class="row g-4 text-center">
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm p-3">
+          <div class="card-body">
+            <i class="fas fa-user-md fa-2x mb-3 text-primary"></i>
+            <h5 data-i18n="service1_title"></h5>
+            <p data-i18n="service1_desc"></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm p-3">
+          <div class="card-body">
+            <i class="fas fa-heartbeat fa-2x mb-3 text-primary"></i>
+            <h5 data-i18n="service2_title"></h5>
+            <p data-i18n="service2_desc"></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm p-3">
+          <div class="card-body">
+            <i class="fas fa-syringe fa-2x mb-3 text-primary"></i>
+            <h5 data-i18n="service3_title"></h5>
+            <p data-i18n="service3_desc"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Équipe -->
+<section id="equipe" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4 fw-bold" data-i18n="team_title"></h2>
+    <div class="row justify-content-center g-4">
+      <!-- Membres -->
+      <div class="col-md-4 text-center">
+        <a class="text-decoration-none text-dark" href="https://rosa.be/fr/hp/theodore-ndzana/" target="_blank">
+          <img src="ndzana.jpeg" class="rounded-circle mb-2" width="140" alt="Dr Ndzana" />
+          <h6>Dr Ndzana</h6>
+          <small class="text-muted" data-i18n="role_généraliste"></small>
+        </a>
+      </div>
+      <div class="col-md-4 text-center">
+        <img src="doctor1.jpg" class="rounded-circle mb-2" width="140" alt="Dr Pepi" />
+        <h6>Dr Pepi</h6>
+        <small class="text-muted" data-i18n="role_cardiologue"></small>
+      </div>
+      <div class="col-md-4 text-center">
+        <img src="doctor2.jpg" class="rounded-circle mb-2" width="140" alt="Dr Marie" />
+        <h6>Dr Marie</h6>
+        <small class="text-muted" data-i18n="role_dermatologue"></small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Galerie -->
+<section id="galerie" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4 fw-bold" data-i18n="gallery_title"></h2>
+    <div id="carouselGalerie" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="centre1.jpg" class="d-block w-100 rounded" alt="Salle d'attente" />
+        </div>
+        <div class="carousel-item">
+          <img src="centre2.jpg" class="d-block w-100 rounded" alt="Consultation" />
+        </div>
+        <div class="carousel-item">
+          <img src="centre3.jpg" class="d-block w-100 rounded" alt="Equipe" />
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselGalerie" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="menu">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-semibold">
-          <li class="nav-item"><a class="nav-link active" href="#accueil">Accueil</a></li>
-          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="#equipe">Équipe</a></li>
-          <li class="nav-item"><a class="nav-link" href="#galerie">Galerie</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselGalerie" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4 fw-bold" data-i18n="contact"></h2>
+    <div class="row g-4 align-items-center">
+      <div class="col-md-6">
+        <p><i class="fas fa-map-marker-alt"></i> <strong data-i18n="adresse_label"></strong>: <span data-i18n="adresse_value"></span></p>
+        <p><i class="fas fa-phone-alt"></i> <strong data-i18n="phone_label"></strong>: <a href="tel:+3222034035">02 203 40 35</a></p>
+        <p><i class="fas fa-envelope"></i> <strong data-i18n="email_label"></strong>: <a href="mailto:contact@medi-steyls.com">contact@medi-steyls.com</a></p>
+      </div>
+      <div class="col-md-6">
+        <iframe src="https://maps.google.com/maps?q=Rue%20de%20l'Émancipation%2015,%20Bruxelles&output=embed" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Infos utiles -->
+<section id="infos" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4 fw-bold" data-i18n="infos_title"></h2>
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <h5><i class="fas fa-clock"></i> <span data-i18n="opening_hours_title"></span></h5>
+        <ul class="list-unstyled">
+          <li><span data-i18n="opening_days"></span></li>
+          <li><span data-i18n="by_appointment"></span></li>
+          <li><span data-i18n="closed_weekend"></span></li>
+        </ul>
+      </div>
+      <div class="col-md-4 mb-3">
+        <h5><i class="fas fa-bus"></i> <span data-i18n="transport_title"></span></h5>
+        <ul class="list-unstyled">
+          <li><i class="fas fa-subway"></i> <span data-i18n="metro_info"></span></li>
+          <li><i class="fas fa-train"></i> <span data-i18n="tram_info"></span></li>
+          <li><i class="fas fa-bus"></i> <span data-i18n="bus_info"></span></li>
+          <li><i class="fas fa-taxi"></i> <span data-i18n="taxi_info"></span></li>
+        </ul>
+      </div>
+      <div class="col-md-4 mb-3">
+        <h5><i class="fas fa-wheelchair"></i> <span data-i18n="accessibility_title"></span></h5>
+        <ul class="list-unstyled">
+          <li><span data-i18n="ramp_access"></span></li>
+          <li><span data-i18n="adapted_toilets"></span></li>
         </ul>
       </div>
     </div>
-  </nav>
+  </div>
+</section>
 
-  <header id="accueil" class="vh-100 d-flex align-items-center text-white text-center header-image">
-    <div class="overlay"></div>
-    <div class="container position-relative">
-      <h1 class="display-4 fw-bold animate-fade-in">CABINET MÉDICAL MEDI-STEYLS</h1>
-      <a href="https://rosa.be/fr/booking/hp/theodore-ndzana/is-new-patient/?site=62441124b1eb746cfe26d82e" class="btn btn-primary mt-4 animate-fade-in" target="_blank">
-        <i class="fas fa-calendar-check me-2"></i>Prendre rendez-vous
-      </a>
-    </div>
-  </header>
+<!-- Pied -->
+<footer>
+  <small>© 2025 Medi-Steyls. Tous droits réservés.</small>
+</footer>
 
-  <section class="py-5 bg-welcome text-center">
-    <div class="container">
-      <h2 class="fw-bold mb-4 text-uppercase">Bienvenue au Cabinet Médical Medi-Steyls</h2>
-      <p class="lead">Le cabinet médical Medi-Steyls vous accueille dans un cadre professionnel et chaleureux. Notre équipe pluridisciplinaire vous accompagne pour vos soins, examens et suivis médicaux.<br>Situé à Bruxelles, nous mettons un point d'honneur à vous offrir une écoute attentive et des services de qualité.</p>
-      <p class="fw-semibold mt-3">Nous sommes ravis de vous recevoir.</p>
-    </div>
-  </section>
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+const translations = {
+  fr: {
+    menu_accueil: "Accueil",
+    menu_services: "Services",
+    menu_equipe: "Équipe",
+    menu_galerie: "Galerie",
+    menu_contact: "Contact",
+    titre: "CENTRE MÉDICAL MEDI-STEYLS",
+    welcome_title: "Bienvenue au Centre Médical Medi-Steyls",
+    description: "Le centre médical Medi-Steyls vous accueille dans un cadre professionnel et chaleureux. Notre équipe pluridisciplinaire vous accompagne pour vos soins, examens et suivis médicaux. Situé à Bruxelles, nous mettons un point d'honneur à vous offrir une écoute attentive et des services de qualité.",
+    we_pleased: "Nous sommes ravis de vous recevoir.",
+    cta: "Prendre rendez-vous",
+    service1_title: "Consultations",
+    service1_desc: "Médecine générale et spécialisée.",
+    service2_title: "Suivi santé",
+    service2_desc: "Examens, contrôle, analyses.",
+    service3_title: "Vaccinations",
+    service3_desc: "Vaccins réguliers ou internationaux.",
+    team_title: "Notre Équipe",
+    gallery_title: "Galerie",
+    contact: "Contact",
+    adresse_label: "Adresse",
+    adresse_value: "Rue de l'Émancipation 15, 1000 Bruxelles",
+    phone_label: "Téléphone",
+    email_label: "Email",
+    infos_title: "Informations utiles",
+    opening_hours_title: "🕒 Horaires d’ouverture",
+    opening_days: "Lundi au Vendredi : 8h00 - 18h00",
+    by_appointment: "Sur rendez-vous",
+    closed_weekend: "Weekend et jours fériés : Fermé",
+    transport_title: "🚆 Accès en transport",
+    metro_info: "🚇 Métro : Station Botanique (Lignes 2 et 6)",
+    tram_info: '🚋 Tram : Ligne 92 – arrêt "Sainte-Marie"',
+    bus_info: "🚌 Bus : Lignes 61, 65 et 66 – arrêt 'Brabant'",
+    taxi_info: "🚖 Taxi : Station devant le centre",
+    accessibility_title: "♿ Accessibilité",
+    ramp_access: "Rampe d'accès à l'entrée",
+    adapted_toilets: "Toilettes adaptées"
+  },
+  en: {
+    menu_accueil: "Home",
+    menu_services: "Services",
+    menu_equipe: "Team",
+    menu_galerie: "Gallery",
+    menu_contact: "Contact",
+    titre: "MEDI-STEYLS MEDICAL CENTER",
+    welcome_title: "Welcome to the Medi-Steyls Medical Center",
+    description: "Medi-Steyls Medical Center welcomes you in a professional and warm environment. Our multidisciplinary team supports your care, examinations, and follow-ups. Located in Brussels, we prioritize attentive listening and quality services.",
+    we_pleased: "We are happy to welcome you.",
+    cta: "Book an appointment",
+    service1_title: "Consultations",
+    service1_desc: "General and specialized medicine.",
+    service2_title: "Health Monitoring",
+    service2_desc: "Examinations, control, analyses.",
+    service3_title: "Vaccinations",
+    service3_desc: "Regular or international vaccines.",
+    team_title: "Our Team",
+    gallery_title: "Gallery",
+    contact: "Contact",
+    adresse_label: "Address",
+    adresse_value: "Rue de l'Émancipation 15, 1000 Brussels",
+    phone_label: "Phone",
+    email_label: "Email",
+    infos_title: "Useful Information",
+    opening_hours_title: "🕒 Opening Hours",
+    opening_days: "Monday to Friday: 8:00 am - 6:00 pm",
+    by_appointment: "By appointment",
+    closed_weekend: "Weekends and holidays: Closed",
+    transport_title: "🚆 Transport",
+    metro_info: "🚇 Metro: Botanique Station (Lines 2 and 6)",
+    tram_info: "🚋 Tram: Line 92 – Sainte-Marie stop",
+    bus_info: "🚌 Bus: Lines 61, 65, 66 – Brabant stop",
+    taxi_info: "🚖 Taxi: Station in front of the centre",
+    accessibility_title: "♿ Accessibility",
+    ramp_access: "Ramp at the entrance",
+    adapted_toilets: "Accessible toilets"
+  },
+  nl: {
+    menu_accueil: "Home",
+    menu_services: "Diensten",
+    menu_equipe: "Team",
+    menu_galerie: "Galerij",
+    menu_contact: "Contact",
+    titre: "MEDISCH CENTRUM MEDI-STEYLS",
+    welcome_title: "Welkom bij het Medisch Centrum Medi-Steyls",
+    description: "Het Medi-Steyls Medisch Centrum verwelkomt u in een professionele en warme omgeving. Ons multidisciplinair team ondersteunt uw zorg, onderzoeken en vervolgafspraken. Gevestigd in Brussel, wij hechten veel waarde aan aandacht en kwaliteit.",
+    we_pleased: "Graag ontvangen we u.",
+    cta: "Maak een afspraak",
+    service1_title: "Consultaties",
+    service1_desc: "Algemene en gespecialiseerde geneeskunde.",
+    service2_title: "Gezondheidsmonitoring",
+    service2_desc: "Examens, controle, analyses.",
+    service3_title: "Vaccinaties",
+    service3_desc: "Reguliere of internationale vaccins.",
+    team_title: "Ons Team",
+    gallery_title: "Galerij",
+    contact: "Contact",
+    adresse_label: "Adres",
+    adresse_value: "Rue de l'Émancipation 15, 1000 Brussel",
+    phone_label: "Telefoon",
+    email_label: "E-mail",
+    infos_title: "Nuttige Informatie",
+    opening_hours_title: "🕒 Openingstijden",
+    opening_days: "Maandag tot Vrijdag: 8:00 - 18:00",
+    by_appointment: "Op afspraak",
+    closed_weekend: "Weekend en feestdagen: Gesloten",
+    transport_title: "🚆 Vervoer",
+    metro_info: "🚇 Metro: Station Botanique (Lijnen 2 en 6)",
+    tram_info: '🚋 Tram: Lijn 92 – halte "Sainte-Marie"',
+    bus_info: "🚌 Bus: Lijnen 61, 65, 66 – halte 'Brabant'",
+    taxi_info: "🚖 Taxi: Station voor het centrum",
+    accessibility_title: "♿ Toegankelijkheid",
+    ramp_access: "Oprit bij ingang",
+    adapted_toilets: "Toiletten voor gehandicapten"
+  }
+};
 
-  <section id="services" class="py-5 text-center">
-    <div class="container">
-      <h2 class="fw-bold mb-4">Nos services</h2>
-      <div class="row g-4">
-        <div class="col-md-4 card-hover">
-          <i class="fas fa-user-md fa-2x text-primary mb-2"></i>
-          <h5>Consultations</h5>
-          <p>Médecine générale et spécialisée.</p>
-        </div>
-        <div class="col-md-4 card-hover">
-          <i class="fas fa-heartbeat fa-2x text-primary mb-2"></i>
-          <h5>Suivi santé</h5>
-          <p>Examens, contrôle, analyses.</p>
-        </div>
-        <div class="col-md-4 card-hover">
-          <i class="fas fa-syringe fa-2x text-primary mb-2"></i>
-          <h5>Vaccinations</h5>
-          <p>Vaccins réguliers ou internationaux.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+function switchLang(lang) {
+  if (!translations[lang]) return;
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.getAttribute("data-i18n");
+    if (translations[lang][key]) {
+      el.textContent = translations[lang][key];
+    }
+  });
+  // Mettre à jour le bouton cta si besoin  
+  const btn = document.querySelector('[data-i18n="cta"]');
+  if (btn && translations[lang]["cta"]) {
+    btn.innerHTML = `<i class="fas fa-calendar-check me-2"></i>${translations[lang]["cta"]}`;
+  }
+}
 
-  <section id="equipe" class="py-5 bg-light text-center">
-    <div class="container">
-      <h2 class="fw-bold mb-4">Notre Équipe</h2>
-      <div class="row g-4">
-        <div class="col-md-4">
-          <a href="https://rosa.be/fr/hp/theodore-ndzana/" target="_blank">
-            <img src="ndzana.jpeg" class="rounded-circle mb-2" width="140" />
-            <h6>Dr Ndzana</h6>
-            <p>Médecin généraliste</p>
-          </a>
-        </div>
-        <div class="col-md-4">
-          <img src="doctor1.jpg" class="rounded-circle mb-2" width="140" />
-          <h6>Dr Pepi</h6>
-          <p>Cardiologue</p>
-        </div>
-        <div class="col-md-4">
-          <img src="doctor2.jpg" class="rounded-circle mb-2" width="140" />
-          <h6>Dr Marie</h6>
-          <p>Dermatologue</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="galerie" class="py-5 text-center">
-    <div class="container">
-      <h2 class="fw-bold mb-4">Galerie</h2>
-      <div id="carouselGalerie" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="cabinet1.jpg" class="d-block w-100 rounded" alt="Cabinet 1">
-          </div>
-          <div class="carousel-item">
-            <img src="cabinet2.jpg" class="d-block w-100 rounded" alt="Cabinet 2">
-          </div>
-          <div class="carousel-item">
-            <img src="cabinet3.jpg" class="d-block w-100 rounded" alt="Cabinet 3">
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselGalerie" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon"></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselGalerie" data-bs-slide="next">
-          <span class="carousel-control-next-icon"></span>
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="py-5 bg-light">
-    <div class="container">
-      <h2 class="fw-bold text-center mb-4">Contact</h2>
-      <div class="row g-4">
-        <div class="col-md-6">
-          <p><strong>Adresse :</strong> Rue de l'Émancipation 15, 1000 Bruxelles</p>
-          <p><strong>Téléphone :</strong> <a href="tel:+3222034035">02 203 40 35</a></p>
-          <p><strong>Email :</strong> <a href="mailto:contact@medi-steyls.com">contact@medi-steyls.com</a></p>
-        </div>
-        <div class="col-md-6">
-          <iframe src="https://maps.google.com/maps?q=Rue%20de%20l'Émancipation%2015,%20Bruxelles&output=embed" width="100%" height="250" style="border:0;" allowfullscreen loading="lazy"></iframe>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="infos" class="py-5 text-center bg-welcome">
-    <div class="container">
-      <h2 class="fw-bold mb-4">Informations utiles</h2>
-      <div class="row text-start">
-        <div class="col-md-4 mb-3">
-          <h5>🕒 Horaires d’ouverture</h5>
-          <ul class="list-unstyled">
-            <li>Lundi au Vendredi : 8h00 - 18h00</li>
-            <li>Sur rendez-vous</li>
-            <li>Weekend et jours fériés : Fermé</li>
-          </ul>
-        </div>
-        <div class="col-md-4 mb-3">
-          <h5>🚆 Accès en transport</h5>
-          <ul class="list-unstyled">
-            <li>🚇 Métro : Station Botanique (Ligne 2 et 6)</li>
-            <li>🚋 Tram : Ligne 92 – arrêt "Sainte-Marie"</li>
-            <li>🚌 Bus : Lignes 61, 65 et 66 – arrêt "Brabant"</li>
-            <li>🚖 Taxi : Station devant le cabinet</li>
-          </ul>
-        </div>
-        <div class="col-md-4 mb-3">
-          <h5>♿ Accessibilité</h5>
-          <ul class="list-unstyled">
-            <li>Rampe d'accès à l'entrée</li>
-            <li>Toilettes adaptées</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer class="text-center text-white bg-dark py-3">
-    <small>&copy; 2025 Medi-Steyls. Tous droits réservés.</small>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="script.js"></script>
+window.addEventListener("DOMContentLoaded", () => {
+  switchLang('fr');
+});
+</script>
 </body>
 </html>
