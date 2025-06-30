@@ -12,14 +12,14 @@
 <!-- Lightbox CSS -->
 <link href="https://cdn.jsdelivr.net/npm/lightbox2/dist/css/lightbox.min.css" rel="stylesheet" />
 
-<!-- Animate.css for animations -->
+<!-- Animate.css pour animations -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
 <style>
   body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     line-height: 1.6;
-    margin-top: 70px; /* pour éviter la cover du fixed-top */
+    margin-top: 70px; /* pour espace sous la navbar fixe */
   }
   /* Logo */
   .logo-img {
@@ -61,22 +61,24 @@
     letter-spacing: 1px;
     position: relative;
   }
-  /* Footer */
+  /* Pied */
   footer {
     background-color: #222;
     color: #fff;
     text-align: center;
     padding: 20px;
   }
-  /* Images galerie */
-  #gallery-grid img {
-    max-height: 200px;
-    object-fit: cover;
-    width: 100%;
-    transition: transform 0.3s;
+  /* Galerie images : taille limitée avec effet moderne */
+  #gallery-grid a img {
+    max-height: 150px; /* Taille adaptée */
+    width: auto; /* garde le ratio */
+    object-fit: cover; /* ajustement propre sans déformation */
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
   }
-  #gallery-grid img:hover {
+  #gallery-grid a img:hover {
     transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   }
   /* Responsive */
   @media(max-width: 768px){
@@ -204,19 +206,20 @@
   <div class="container">
     <h2 class="text-center mb-4 fw-bold" data-i18n="gallery_title"></h2>
     <div class="row g-3" id="gallery-grid">
+      <!-- Exemples d'images avec taille limitée -->
       <div class="col-6 col-md-4">
         <a href="centre1.jpg" data-lightbox="medis-gallery" data-title="Salle d'attente">
-          <img src="centre1.jpg" class="img-fluid rounded shadow-sm" alt="Salle d'attente" />
+          <img src="centre1.jpg" class="lazy img-fluid rounded shadow-sm" alt="Salle d'attente" />
         </a>
       </div>
       <div class="col-6 col-md-4">
         <a href="centre2.jpg" data-lightbox="medis-gallery" data-title="Consultation">
-          <img src="centre2.jpg" class="img-fluid rounded shadow-sm" alt="Consultation" />
+          <img src="centre2.jpg" class="lazy img-fluid rounded shadow-sm" alt="Consultation" />
         </a>
       </div>
       <div class="col-6 col-md-4">
         <a href="centre3.jpg" data-lightbox="medis-gallery" data-title="Equipe">
-          <img src="centre3.jpg" class="img-fluid rounded shadow-sm" alt="Equipe" />
+          <img src="centre3.jpg" class="lazy img-fluid rounded shadow-sm" alt="Equipe" />
         </a>
       </div>
     </div>
@@ -297,7 +300,7 @@ const translations = {
     menu_contact: "Contact",
     titre: "CENTRE MÉDICAL MEDI-STEYLS",
     welcome_title: "Bienvenue au Centre Médical Medi-Steyls",
-    description: "Le centre médical Medi-Steyls vous accueille dans un cadre professionnel et chaleureux. Notre équipe pluridisciplinaire vous accompagne pour vos soins, examens et suivis médicaux. Situé à Bruxelles, nous mettons un point d'honneur à vous offrir une écoute attentive et des services de qualité.",
+    description: "Le centre médical Medi-Steyls vous accueille dans un cadre professionnel et chaleureux...",
     we_pleased: "Nous sommes ravis de vous recevoir.",
     cta: "Prendre rendez-vous",
     service1_title: "Consultations",
@@ -335,7 +338,7 @@ const translations = {
     menu_contact: "Contact",
     titre: "MEDI-STEYLS MEDICAL CENTER",
     welcome_title: "Welcome to the Medi-Steyls Medical Center",
-    description: "Medi-Steyls Medical Center welcomes you in a professional and warm environment. Our multidisciplinary team supports your care, examinations, and follow-ups. Located in Brussels, we prioritize attentive listening and quality services.",
+    description: "Medi-Steyls Medical Center welcomes you in a professional and warm environment...",
     we_pleased: "We are happy to welcome you.",
     cta: "Book an appointment",
     service1_title: "Consultations",
@@ -359,7 +362,7 @@ const translations = {
     transport_title: "🚆 Transport",
     metro_info: "🚇 Metro: Botanique Station (Lignes 2 et 6)",
     tram_info: "🚋 Tram: Line 92 – Sainte-Marie stop",
-    bus_info: "🚌 Bus: Lines 61, 65, 66 – Brabant stop",
+    bus_info: "🚌 Bus: Lines 61,65,66 – Brabant stop",
     taxi_info: "🚖 Taxi: Station in front of the centre",
     accessibility_title: "♿ Accessibility",
     ramp_access: "Ramp at the entrance",
@@ -373,7 +376,7 @@ const translations = {
     menu_contact: "Contact",
     titre: "MEDISCH CENTRUM MEDI-STEYLS",
     welcome_title: "Welkom bij het Medisch Centrum Medi-Steyls",
-    description: "Het Medi-Steyls Medisch Centrum verwelkomt u in een professionele en warme omgeving. Ons multidisciplinair team ondersteunt uw zorg, onderzoeken en vervolgafspraken. Gevestigd in Brussel, wij hechten veel waarde aan aandacht en kwaliteit.",
+    description: "Het Medi-Steyls Medisch Centrum verwelkomt u...",
     we_pleased: "Graag ontvangen we u.",
     cta: "Maak een afspraak",
     service1_title: "Consultaties",
@@ -419,16 +422,17 @@ function switchLang(lang) {
   }
 }
 
-// Animation on load  
+// Appel au chargement  
 window.addEventListener("DOMContentLoaded", () => {
   switchLang('fr');
-  // Animate sections  
+  // Animations  
   document.querySelectorAll('section').forEach(s => {
     s.classList.add('animate__animated', 'animate__fadeInUp');
   });
-  // Lazyload images  
+  // Lazy load images  
   new LazyLoad({ elements_selector: ".lazy" });
 });
 </script>
+
 </body>
 </html>
